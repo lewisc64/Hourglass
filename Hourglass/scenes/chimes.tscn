@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbjso2gpx2oq3"]
+
+[ext_resource type="AudioStream" uid="uid://da2gn8km3bi5h" path="res://assets/audio/chime1.ogg" id="1_lc0hi"]
+[ext_resource type="Script" uid="uid://dj4ajg3xvyi" path="res://scenes/chimes.gd" id="1_vqvs6"]
+[ext_resource type="AudioStream" uid="uid://8g4pi38amynj" path="res://assets/audio/chime2.ogg" id="3_juxhu"]
+[ext_resource type="AudioStream" uid="uid://d30xkfsp55vhl" path="res://assets/audio/chime3.ogg" id="4_abcuq"]
+
+[node name="Chimes" type="Node"]
+script = ExtResource("1_vqvs6")
+
+[node name="AudioChime1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lc0hi")
+
+[node name="AudioChime2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_juxhu")
+
+[node name="AudioChime3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_abcuq")
