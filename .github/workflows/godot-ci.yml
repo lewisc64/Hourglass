@@ -4,6 +4,11 @@ on: push
 env:
   GODOT_VERSION: 4.4.1
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   export-web:
     name: Web Export
