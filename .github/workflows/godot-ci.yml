@@ -3,8 +3,6 @@ on: push
 
 env:
   GODOT_VERSION: 4.4.1
-  EXPORT_NAME: hourglass
-  PROJECT_PATH: Hourglass
 
 jobs:
   export-web:
@@ -24,7 +22,7 @@ jobs:
       - name: Web Build
         run: |
           mkdir -v -p ./build/web
-          godot --headless --verbose --export-release "Web" "./build/web/index.html"
+          godot --headless --verbose --export-release "Web" "./Hourglass/project.godot" "./build/web/index.html"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
