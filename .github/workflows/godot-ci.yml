@@ -27,16 +27,12 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: web
-          path: build/web
-      - name: Install rsync
-        run: |
-          apt-get update && apt-get install -y rsync
+          path: './Hourglass/build/web'
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          branch: gh-pages
-          folder: build/web
+        id: deployment
+        uses: actions/deploy-pages@v4
