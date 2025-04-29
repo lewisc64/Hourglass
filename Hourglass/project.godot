@@ -13,6 +13,8 @@ config_version=5
 config/name="Hourglass"
 run/main_scene="uid://be3pykxu8ypp0"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0.027451, 0.305882, 0.313726, 1)
+boot_splash/show_image=false
 config/icon="uid://dxet76cpnotld"
 
 [display]

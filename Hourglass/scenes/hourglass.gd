@@ -51,6 +51,7 @@ func get_remaining_seconds() -> float:
 func reset():
 	_resetting = true
 	_timeout.emit()
+	animation_player.play("RESET")
 
 	# wait a frame for other awaited functions to drop out
 	_processed_reset.emit.call_deferred()
