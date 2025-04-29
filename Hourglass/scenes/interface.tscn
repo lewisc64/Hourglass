@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://be3pykxu8ypp0"]
+[gd_scene load_steps=9 format=3 uid="uid://be3pykxu8ypp0"]
 
 [ext_resource type="Script" uid="uid://7vmae48fo5fn" path="res://scenes/interface.gd" id="1_beetn"]
 [ext_resource type="PackedScene" uid="uid://e06rw76b7gcq" path="res://scenes/hourglass.tscn" id="1_fiocc"]
 [ext_resource type="PackedScene" uid="uid://dbjso2gpx2oq3" path="res://scenes/chimes.tscn" id="3_ajs2v"]
 [ext_resource type="Shader" uid="uid://symutan5hon4" path="res://scenes/hue_shift.tres" id="3_s0di0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0di0"]
+
+[sub_resource type="Theme" id="Theme_s0di0"]
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_s0di0")
 
 [sub_resource type="LabelSettings" id="LabelSettings_fiocc"]
 font_size = 48
@@ -19,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_s0di0")
 script = ExtResource("1_beetn")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -62,7 +68,6 @@ layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 16
 columns = 3
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
@@ -77,32 +82,23 @@ text = "Minutes"
 layout_mode = 2
 text = "Seconds"
 
-[node name="TextEditHours" type="TextEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LineEditHours" type="LineEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 text = "0"
-placeholder_text = "Hours"
-emoji_menu_enabled = false
-middle_mouse_paste_enabled = false
+virtual_keyboard_type = 2
 
-[node name="TextEditMinutes" type="TextEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LineEditMinutes" type="LineEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 text = "0"
-placeholder_text = "Minutes"
-emoji_menu_enabled = false
-middle_mouse_paste_enabled = false
+virtual_keyboard_type = 2
 
-[node name="TextEditSeconds" type="TextEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LineEditSeconds" type="LineEdit" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 text = "0"
-placeholder_text = "Seconds"
-emoji_menu_enabled = false
-middle_mouse_paste_enabled = false
+virtual_keyboard_type = 2
 
 [node name="ButtonFlip" type="Button" parent="MarginContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

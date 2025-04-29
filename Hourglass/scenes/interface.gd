@@ -1,8 +1,8 @@
 extends Control
 
-@onready var text_edit_hours: TextEdit = %TextEditHours
-@onready var text_edit_minutes: TextEdit = %TextEditMinutes
-@onready var text_edit_seconds: TextEdit = %TextEditSeconds
+@onready var line_edit_hours: LineEdit = %LineEditHours
+@onready var line_edit_minutes: LineEdit = %LineEditMinutes
+@onready var line_edit_seconds: LineEdit = %LineEditSeconds
 @onready var label_remaining_time: Label = %LabelRemainingTime
 @onready var hourglass: Hourglass = %Hourglass
 @onready var button_flip: Button = %ButtonFlip
@@ -23,9 +23,9 @@ func _ready():
 
 func get_seconds() -> float:
 	var seconds = 0.0
-	seconds += float(text_edit_hours.text) * 3600
-	seconds += float(text_edit_minutes.text) * 60
-	seconds += float(text_edit_seconds.text)
+	seconds += float(line_edit_hours.text) * 3600
+	seconds += float(line_edit_minutes.text) * 60
+	seconds += float(line_edit_seconds.text)
 	return seconds
 
 
