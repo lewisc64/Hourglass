@@ -32,13 +32,13 @@ func get_seconds() -> float:
 func start():
 	await reset()
 	_reset_flag = false
-	
+
 	button_flip.disabled = true
 	button_reset.disabled = false
-	
+
 	hourglass.set_time(get_seconds())
 	await hourglass.flip()
-	
+
 	if not _reset_flag:
 		alarm()
 
@@ -88,19 +88,19 @@ func _process(delta):
 	_shake_time = 0
 	hourglass.position = Vector2.ZERO
 	hourglass.rotation = 0
-	
+
 	var seconds = hourglass.get_remaining_seconds()
 	var hours = int(seconds / 3600.0)
 	seconds -= hours * 3600
 	var minutes = int(seconds / 60)
 	seconds -= minutes * 60
-	
+
 	var text: String
 	if int(seconds) == 1:
 		text = "1 second"
 	else:
 		text = "%d seconds" % seconds
-	
+
 	if minutes != 0:
 		if minutes == 1:
 			text = "1 minute, %s" % text
